@@ -605,6 +605,12 @@ pub fn write_out_label_options(
 
 	if label_type.is_label()
 	{
+		first_opt! {options,
+			Hypertext => {
+				write!(w, " hypertext");
+			}
+		}
+
 		let mut have_point = false;
 		first_opt! {options,
 			MarkerSymbol(s) =>

@@ -230,6 +230,8 @@ pub enum LabelOption<T>
 	MarkerColor(T),
 	/// Sets the size of the marker. The size acts as a multiplier, with 1.0 being the default.
 	MarkerSize(f64),
+    /// Display label on hover. Only applies with hypertext-capable output formats (.e.g. SVG).
+    Hypertext,
 }
 
 impl<'l> OneWayOwned for LabelOption<&'l str>
@@ -247,6 +249,7 @@ impl<'l> OneWayOwned for LabelOption<&'l str>
 			MarkerSymbol(v) => MarkerSymbol(v),
 			MarkerColor(v) => MarkerColor(v.into()),
 			MarkerSize(v) => MarkerSize(v),
+            Hypertext => Hypertext,
 		}
 	}
 }
